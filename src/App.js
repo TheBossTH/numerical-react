@@ -14,7 +14,7 @@ function App() {
                 <Route path={'/register'}>
                     <RegisterPage />
                 </Route>
-                <Route path={'/:name/:nickname'}>
+                <Route path={'/:name,:nickname'}>
                     <DynamicPage />
                 </Route>
             </Switch>
