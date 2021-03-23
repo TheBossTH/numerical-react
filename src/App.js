@@ -18,7 +18,7 @@ function App() {
                 <Route path={'/counter'}>
                     <CounterPage />
                 </Route>
-                <Route path={'/:name,:nickname'}>
+                <Route path={'/:name/:nickname'}>
                     <DynamicPage />
                 </Route>
             </Switch>
