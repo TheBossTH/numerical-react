@@ -1,3 +1,4 @@
+import IndexPage from './pages/IndexPage'
 import HomePage from './pages/HomePage'
 import AssignmentsPage from './pages/AssignmentsPage'
 import DynamicPage from './pages/DynamicPage'
@@ -9,6 +10,9 @@ function App() {
         <Router>
             <NavBar />
             <Switch>
+                <Route exact path={'/'}>
+                    <IndexPage />
+                </Route>
                 <Route path={'/home'}>
                     <HomePage />
                 </Route>

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 const NavBar = () => {
     return (
         <Navbar bg="dark" expand="lg" variant="dark" sticky="top">
-            <Navbar.Brand href="#">Numerical</Navbar.Brand>
+            <Navbar.Brand href="/">Numerical</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
