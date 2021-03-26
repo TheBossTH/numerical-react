@@ -19,7 +19,7 @@ const FormHome = () => {
     return (
         <div>
             <Container className="mt-5 p-4 bg-light">
-                <h2>Hello ,I'm Kittidet Cheavachirakul</h2>
+                <h2>Hello!</h2>
                 <label>Username : </label>
                 <input
                     type="text"
