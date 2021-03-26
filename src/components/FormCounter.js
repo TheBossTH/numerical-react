@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 
 const FormCounter = () => {
     const [Cout, setCout] = useState({
@@ -12,8 +12,7 @@ const FormCounter = () => {
 
     return (
         <div>
-            <Container>
-                <br />
+            <Container className="mt-5 p-4 bg-light">
                 {Cout.numconter > 20 ? (
                     <h1 className="text-danger">{Cout.numconter}</h1>
                 ) : Cout.numconter < 0 ? (
@@ -21,20 +20,23 @@ const FormCounter = () => {
                 ) : (
                     <h1>{Cout.numconter}</h1>
                 )}
-                <button
+                <Button
+                    variant="danger"
                     onClick={() => {
                         setCout({ ...Cout, numconter: Cout.numconter - 1 })
                     }}
                 >
                     YAMETE! Senpai(-)
-                </button>
-                <button
+                </Button>
+                <Button
+                    variant="success"
+                    className="ml-2"
                     onClick={() => {
                         setCout({ ...Cout, numconter: Cout.numconter + 1 })
                     }}
                 >
                     Notice Me Senpai(+)
-                </button>
+                </Button>
                 <br />
                 <br />
                 <h2>Count &gt; 20 = Red</h2>

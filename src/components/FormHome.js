@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 
-const FormLogin = () => {
+const FormHome = () => {
     const [data, setData] = useState({
         username: '',
         password: '',
     })
-    const [isShow, setShow] = useState(true)
+    const [isShow, setShow] = useState(false)
 
     useEffect(() => {
         console.log('Mount Component')
@@ -18,7 +18,8 @@ const FormLogin = () => {
 
     return (
         <div>
-            <Container>
+            <Container className="mt-5 p-4 bg-light">
+                <h2>Hello ,I'm Kittidet Cheavachirakul</h2>
                 <label>Username : </label>
                 <input
                     type="text"
@@ -35,13 +36,13 @@ const FormLogin = () => {
                     }}
                 />
                 <hr />
-                <button
+                <Button
                     onClick={() => {
                         setShow(!isShow)
                     }}
                 >
                     Click Me
-                </button>
+                </Button>
                 : {isShow.toString()}
                 <br />
                 {isShow && (
@@ -57,4 +58,4 @@ const FormLogin = () => {
     )
 }
 
-export default FormLogin
+export default FormHome

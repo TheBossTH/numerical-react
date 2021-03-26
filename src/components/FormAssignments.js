@@ -1,8 +1,8 @@
 import { Form, Button, Container } from 'react-bootstrap'
-const FormRegister = () => {
+const FormAssignments = () => {
     return (
         <div>
-            <Container>
+            <Container className="mt-5 p-4 bg-light">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -28,4 +28,4 @@ const FormRegister = () => {
     )
 }
 
-export default FormRegister
+export default FormAssignments
