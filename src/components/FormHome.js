@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Container, Button } from 'react-bootstrap'
+const axios = require('axios').default
 
 const FormHome = () => {
     const [data, setData] = useState({
@@ -7,6 +8,7 @@ const FormHome = () => {
         password: '',
     })
     const [isShow, setShow] = useState(false)
+    const [isSubmit, setSubmit] = useState(false)
 
     useEffect(() => {
         console.log('Mount Component')
@@ -35,8 +37,24 @@ const FormHome = () => {
                         setData({ ...data, password: e.target.value })
                     }}
                 />
+                <br />
+                <Button
+                    disabled={isSubmit}
+                    onClick={async () => {
+                        setSubmit(true)
+                        const s = await axios.post(
+                            'http://localhost:8080/api/v1/users/login',
+                            data
+                        )
+                        console.log(s.config.data)
+                        s.status === 200 && setSubmit(false)
+                    }}
+                >
+                    Login
+                </Button>
                 <hr />
                 <Button
+                    variant="outline-secondary"
                     onClick={() => {
                         setShow(!isShow)
                     }}
