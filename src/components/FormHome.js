@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Container, Button } from 'react-bootstrap'
+import { Container, Form, Button } from 'react-bootstrap'
 const axios = require('axios').default
 
 const FormHome = () => {
@@ -21,37 +21,42 @@ const FormHome = () => {
     return (
         <div>
             <Container className="mt-5 p-4 bg-light">
-                <h2>Hello!</h2>
-                <label>Username : </label>
-                <input
-                    type="text"
-                    onChange={(e) => {
-                        setData({ ...data, username: e.target.value })
-                    }}
-                />
-                <br />
-                <label>Password : </label>
-                <input
-                    type="password"
-                    onChange={(e) => {
-                        setData({ ...data, password: e.target.value })
-                    }}
-                />
-                <br />
-                <Button
-                    disabled={isSubmit}
-                    onClick={async () => {
-                        setSubmit(true)
-                        const s = await axios.post(
-                            'http://localhost:8080/api/v1/users/login',
-                            data
-                        )
-                        console.log(s.config.data)
-                        s.status === 200 && setSubmit(false)
-                    }}
-                >
-                    Login
-                </Button>
+                <Form>
+                    <Form.Group controlId="Username">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter Username"
+                            onChange={(e) => {
+                                setData({ ...data, username: e.target.value })
+                            }}
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="Password">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Enter Password"
+                            onChange={(e) => {
+                                setData({ ...data, password: e.target.value })
+                            }}
+                        />
+                    </Form.Group>
+                    <Button
+                        disabled={isSubmit}
+                        onClick={async () => {
+                            setSubmit(true)
+                            const s = await axios.post(
+                                'http://localhost:8080/api/v1/users/login',
+                                data
+                            )
+                            console.log(s.config.data)
+                            s.status === 200 && setSubmit(false)
+                        }}
+                    >
+                        Login
+                    </Button>
+                </Form>
                 <hr />
                 <Button
                     variant="outline-secondary"
