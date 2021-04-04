@@ -12,7 +12,7 @@ import CramerPage from './pages/LinearAlgebraicEquations/CramerPage'
 import LinearAlgebraicEquationsPage from './pages/LinearAlgebraicEquationsPage'
 import InterpolationandExtrapolationPage from './pages/InterpolationandExtrapolationPage'
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 function App() {
     return (
