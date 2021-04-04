@@ -21,7 +21,7 @@ const Onepoint = () => {
                             <Form.Control
                                 plaintext
                                 readOnly
-                                defaultValue="(x^4)-13"
+                                defaultValue="(1/4)+(x/2)"
                             />
                         </Col>
                     </Form.Group>
