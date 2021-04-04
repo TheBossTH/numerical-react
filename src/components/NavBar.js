@@ -1,10 +1,19 @@
-import { Nav, Navbar, Form, Button } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { Nav, Navbar, NavDropdown, Form, Button } from 'react-bootstrap'
+import { NavLink, Link } from 'react-router-dom'
+import icon from '../images/icon.png'
 const NavBar = () => {
     return (
         <Navbar bg="dark" expand="lg" variant="dark" sticky="top">
             <NavLink to="/" className="nav-link">
-                <Navbar.Brand>Numerical</Navbar.Brand>
+                <Navbar.Brand>
+                    <img
+                        src={icon}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                        alt="React Bootstrap logo"
+                    />
+                </Navbar.Brand>
             </NavLink>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -12,6 +21,94 @@ const NavBar = () => {
                     <NavLink to="/home" className="nav-link">
                         Home
                     </NavLink>
+                    <NavDropdown
+                        title="Roots of Equations"
+                        id="collasible-nav-dropdown"
+                    >
+                        <NavDropdown.Item as={Link} to="/Bisection">
+                            Bisection Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/FalsePosition">
+                            False-Position Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/OnePoint">
+                            One-Point Iteration Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/NewtonRaphson">
+                            Newton-Raphson Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/Secant">
+                            Secant Method
+                        </NavDropdown.Item>
+                    </NavDropdown>
+                    <NavDropdown
+                        title="Linear Algebraic Equations"
+                        id="collasible-nav-dropdown"
+                    >
+                        <NavDropdown.Item as={Link} to="/Cramer">
+                            Cramer's rule
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/LinearAlgebraicEquationsPage"
+                        >
+                            Gauss-Elimination Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/LinearAlgebraicEquationsPage"
+                        >
+                            Gauss-Jordan Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/LinearAlgebraicEquationsPage"
+                        >
+                            LU decomposition Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/LinearAlgebraicEquationsPage"
+                        >
+                            Jacobi Iteration Method
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/LinearAlgebraicEquationsPage"
+                        >
+                            Gauss-seidel
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/LinearAlgebraicEquationsPage"
+                        >
+                            Conjugate Gradient Method
+                        </NavDropdown.Item>
+                    </NavDropdown>
+                    <NavDropdown
+                        title="Interpolation and Extrapolation"
+                        id="collasible-nav-dropdown"
+                    >
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/InterpolationandExtrapolationPage"
+                        >
+                            Linear
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/InterpolationandExtrapolationPage"
+                        >
+                            Quadratic
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/InterpolationandExtrapolationPage"
+                        >
+                            Polynomial
+                        </NavDropdown.Item>
+                    </NavDropdown>
                     <NavLink to="/assignments" className="nav-link">
                         Assignments
                     </NavLink>
