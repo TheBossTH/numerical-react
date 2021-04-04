@@ -1,5 +1,4 @@
 import IndexPage from './pages/IndexPage'
-import HomePage from './pages/HomePage'
 import AssignmentsPage from './pages/AssignmentsPage'
 import DynamicPage from './pages/DynamicPage'
 import CounterPage from './pages/CounterPage'
@@ -13,7 +12,7 @@ import CramerPage from './pages/LinearAlgebraicEquations/CramerPage'
 import LinearAlgebraicEquationsPage from './pages/LinearAlgebraicEquationsPage'
 import InterpolationandExtrapolationPage from './pages/InterpolationandExtrapolationPage'
 
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 function App() {
     return (
@@ -22,9 +21,6 @@ function App() {
             <Switch>
                 <Route exact path={'/'}>
                     <IndexPage />
-                </Route>
-                <Route path={'/home'}>
-                    <HomePage />
                 </Route>
                 <Route path={'/Bisection'}>
                     <BisectionPage />
