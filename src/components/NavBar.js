@@ -83,6 +83,7 @@ const NavBar = () => {
                             Conjugate Gradient Method
                         </NavDropdown.Item>
                     </NavDropdown>
+
                     <NavDropdown
                         title="Interpolation and Extrapolation"
                         id="collasible-nav-dropdown"
@@ -91,21 +92,46 @@ const NavBar = () => {
                             as={Link}
                             to="/InterpolationandExtrapolationPage"
                         >
-                            Linear
+                            Newton's divided-differences
                         </NavDropdown.Item>
                         <NavDropdown.Item
                             as={Link}
                             to="/InterpolationandExtrapolationPage"
                         >
-                            Quadratic
+                            Lagrange polynomials
                         </NavDropdown.Item>
                         <NavDropdown.Item
                             as={Link}
                             to="/InterpolationandExtrapolationPage"
                         >
-                            Polynomial
+                            Spline interpolation
                         </NavDropdown.Item>
                     </NavDropdown>
+
+                    <NavDropdown
+                        title="Least-Squares Regression"
+                        id="collasible-nav-dropdown"
+                    >
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/InterpolationandExtrapolationPage"
+                        >
+                            Liner Regression
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/InterpolationandExtrapolationPage"
+                        >
+                            Polynomial Regression
+                        </NavDropdown.Item>
+                        <NavDropdown.Item
+                            as={Link}
+                            to="/InterpolationandExtrapolationPage"
+                        >
+                            Multiple Linear Regression
+                        </NavDropdown.Item>
+                    </NavDropdown>
+
                     <NavLink to="/assignments" className="nav-link">
                         Assignments
                     </NavLink>
