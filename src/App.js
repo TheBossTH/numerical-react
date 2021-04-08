@@ -27,10 +27,12 @@ import MultipleLinearRegressionPage from './pages/LeastSquaresRegression/Multipl
 
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
+import Sidebar from './components/Sidebar'
 function App() {
     return (
         <Router>
             <NavBar />
+            {/* <Sidebar /> */}
             <Switch>
                 <Route exact path={'/'}>
                     <IndexPage />

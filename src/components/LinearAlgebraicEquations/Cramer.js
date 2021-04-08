@@ -4,9 +4,18 @@ const axios = require('axios').default
 
 const Cramer = () => {
     const [data, setData] = useState({
-        xl: 0,
-        xr: 0,
-        error: 0.00001,
+        a11: 0,
+        a12: 0,
+        a13: 0,
+        a21: 0,
+        a22: 0,
+        a23: 0,
+        a31: 0,
+        a32: 0,
+        a33: 0,
+        b1: 0,
+        b2: 0,
+        b3: 0,
     })
     const [results, setResults] = useState(null)
     return (
@@ -16,105 +25,197 @@ const Cramer = () => {
                 <Form>
                     <Form.Group as={Row} controlId="Equation">
                         <Form.Label column sm="2">
-                            Equation :
+                            A :
                         </Form.Label>
-                        <Col sm="10">
-                            <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^4)-13"
-                            />
-                        </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="XL">
-                        <Form.Label column sm="2">
-                            XL :
-                        </Form.Label>
-                        <Col sm="10">
+                        <Col>
                             <Form.Control
                                 type="number"
-                                placeholder="XL"
+                                placeholder=""
                                 onChange={(e) => {
                                     setData({
                                         ...data,
-                                        xl: parseFloat(e.target.value),
+                                        a11: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        a12: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        a13: parseFloat(e.target.value),
                                     })
                                 }}
                             />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="XR">
-                        <Form.Label column sm="2">
-                            XR :
-                        </Form.Label>
-                        <Col sm="10">
+                        <Col>
                             <Form.Control
                                 type="number"
-                                placeholder="XR"
+                                placeholder=""
                                 onChange={(e) => {
                                     setData({
                                         ...data,
-                                        xr: parseFloat(e.target.value),
+                                        a21: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        a22: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        a23: parseFloat(e.target.value),
                                     })
                                 }}
                             />
                         </Col>
                     </Form.Group>
-                    <Form.Group as={Row} controlId="Error">
-                        <Form.Label column sm="2">
-                            Error :
-                        </Form.Label>
-                        <Col sm="10">
+                    <Form.Group as={Row} controlId="XR">
+                        <Col>
                             <Form.Control
                                 type="number"
-                                placeholder="Error"
+                                placeholder=""
                                 onChange={(e) => {
                                     setData({
                                         ...data,
-                                        error: parseFloat(e.target.value),
+                                        a31: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        a32: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        a33: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId="B">
+                        <Form.Label column sm="2">
+                            B :
+                        </Form.Label>
+                    </Form.Group>
+                    <Form.Group as={Row} controlId="XL">
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        b1: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        b2: parseFloat(e.target.value),
+                                    })
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                placeholder=""
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        b3: parseFloat(e.target.value),
                                     })
                                 }}
                             />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row}>
-                        <Col sm={{ span: 10, offset: 2 }}>
-                            <Button
-                                type="button"
-                                onClick={async () => {
-                                    const res = await axios.post(
-                                        'http://localhost:8080/api/v1/root/bisection',
-                                        data
-                                    )
-                                    console.log(res)
-                                    setResults(
-                                        JSON.parse(res.request.response).data
-                                    )
-                                }}
-                            >
-                                Calculate
-                            </Button>
-                        </Col>
+                        <Button
+                            block
+                            type="button"
+                            onClick={async () => {
+                                const res = await axios.post(
+                                    'http://localhost:8080/api/v1/root/cramer',
+                                    data
+                                )
+                                console.log(res)
+                                setResults(
+                                    JSON.parse(res.request.response).data
+                                )
+                            }}
+                        >
+                            Calculate
+                        </Button>
                     </Form.Group>
                     {results !== null && (
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th>Iteration</th>
-                                    <th>XL</th>
-                                    <th>XR</th>
-                                    <th>XM</th>
-                                    <th>ER</th>
+                                    <th>X</th>
+                                    <th>Value</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {results.map((r) => (
-                                    <tr key={r.iteration}>
-                                        <td>{r.iteration}</td>
-                                        <td>{r.xl}</td>
-                                        <td>{r.xr}</td>
-                                        <td>{r.xm}</td>
-                                        <td>{r.er}</td>
+                                    <tr key={r.x}>
+                                        <td>{r.x}</td>
+                                        <td>{r.value}</td>
                                     </tr>
                                 ))}
                             </tbody>
