@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap'
 const axios = require('axios').default
 
-const Cramer = () => {
+const Lagrangepolynomials = () => {
     const [data, setData] = useState({
         xl: 0,
         xr: 0,
@@ -12,7 +12,7 @@ const Cramer = () => {
     return (
         <div>
             <Container className="mt-5 p-4 rounded bg-light">
-                <h2>Cramer's rule</h2>
+                <h2>Lagrange polynomials</h2>
                 <Form>
                     <Form.Group as={Row} controlId="Equation">
                         <Form.Label column sm="2">
@@ -126,4 +126,4 @@ const Cramer = () => {
     )
 }
 
-export default Cramer
+export default Lagrangepolynomials

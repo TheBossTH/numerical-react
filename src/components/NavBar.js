@@ -11,7 +11,7 @@ const NavBar = () => {
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
-                        alt="React Bootstrap logo"
+                        alt="logo"
                     />
                 </Navbar.Brand>
             </NavLink>
@@ -45,41 +45,23 @@ const NavBar = () => {
                         <NavDropdown.Item as={Link} to="/Cramer">
                             Cramer's rule
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/LinearAlgebraicEquationsPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/GaussElimination">
                             Gauss-Elimination Method
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/LinearAlgebraicEquationsPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/GaussJordan">
                             Gauss-Jordan Method
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/LinearAlgebraicEquationsPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/LUdecomposition">
                             LU decomposition Method
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/LinearAlgebraicEquationsPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/JacobiIteration">
                             Jacobi Iteration Method
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/LinearAlgebraicEquationsPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/Gaussseidel">
                             Gauss-seidel
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/LinearAlgebraicEquationsPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/ConjugateGradient">
                             Conjugate Gradient Method
                         </NavDropdown.Item>
                     </NavDropdown>
@@ -88,22 +70,13 @@ const NavBar = () => {
                         title="Interpolation and Extrapolation"
                         id="collasible-nav-dropdown"
                     >
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/InterpolationandExtrapolationPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/Newtondivided">
                             Newton's divided-differences
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/InterpolationandExtrapolationPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/Lagrangepolynomials">
                             Lagrange polynomials
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/InterpolationandExtrapolationPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/Splineinterpolation">
                             Spline interpolation
                         </NavDropdown.Item>
                     </NavDropdown>
@@ -112,21 +85,15 @@ const NavBar = () => {
                         title="Least-Squares Regression"
                         id="collasible-nav-dropdown"
                     >
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/InterpolationandExtrapolationPage"
-                        >
-                            Liner Regression
+                        <NavDropdown.Item as={Link} to="/LinearRegression">
+                            Linear Regression
                         </NavDropdown.Item>
-                        <NavDropdown.Item
-                            as={Link}
-                            to="/InterpolationandExtrapolationPage"
-                        >
+                        <NavDropdown.Item as={Link} to="/PolynomialRegression">
                             Polynomial Regression
                         </NavDropdown.Item>
                         <NavDropdown.Item
                             as={Link}
-                            to="/InterpolationandExtrapolationPage"
+                            to="/MultipleLinearRegression"
                         >
                             Multiple Linear Regression
                         </NavDropdown.Item>
