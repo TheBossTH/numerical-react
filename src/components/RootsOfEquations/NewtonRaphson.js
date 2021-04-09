@@ -10,7 +10,7 @@ const NewtonRaphson = () => {
     const [results, setResults] = useState(null)
     return (
         <div>
-            <Container className="mt-5 p-4 rounded bg-light">
+            <Container className="mt-5 p-4 bg-dark text-white shadow">
                 <h2>Newton-Raphson Method</h2>
                 <Form>
                     <Form.Group as={Row} controlId="Equation">
@@ -79,7 +79,7 @@ const NewtonRaphson = () => {
                         </Col>
                     </Form.Group>
                     {results !== null && (
-                        <Table striped bordered hover>
+                        <Table striped bordered hover variant="dark">
                             <thead>
                                 <tr>
                                     <th>Iteration</th>

@@ -9,8 +9,16 @@ import {
 } from 'react-pro-sidebar'
 import { Link } from 'react-router-dom'
 import './Sidebar.scss'
-import icon from '../images/icon.png'
-import image from '../images/bg1.jpg'
+import image from '../images/bg2.jpg'
+import {
+    FaSquareRootAlt,
+    FaBuffer,
+    FaYandexInternational,
+    FaJsSquare,
+    FaGithub,
+    FaPlus,
+    FaHome,
+} from 'react-icons/fa'
 const Sidebar = () => {
     return (
         <ProSidebar image={image}>
@@ -28,11 +36,19 @@ const Sidebar = () => {
                     }}
                 >
                     Numerical React
+                    <Link to="/" />
                 </div>
             </SidebarHeader>
             <SidebarContent>
-                <Menu iconShape="square">
-                    <SubMenu title="Roots of Equations" icon={icon}>
+                <Menu iconShape="circle">
+                    <MenuItem icon={<FaHome />}>
+                        Home
+                        <Link to="/" />
+                    </MenuItem>
+                    <SubMenu
+                        title="Roots of Equations"
+                        icon={<FaSquareRootAlt />}
+                    >
                         <MenuItem>
                             Bisection Method
                             <Link to="/Bisection" />
@@ -54,7 +70,85 @@ const Sidebar = () => {
                             <Link to="/Secant" />
                         </MenuItem>
                     </SubMenu>
-                    <MenuItem icon={icon}>Dashboard</MenuItem>
+                    <SubMenu
+                        title="Linear Algebraic Equations"
+                        icon={<FaBuffer />}
+                    >
+                        <MenuItem>
+                            Cramer's rule
+                            <Link to="/Cramer" />
+                        </MenuItem>
+                        <MenuItem>
+                            Gauss-Elimination Method
+                            <Link to="/GaussElimination" />
+                        </MenuItem>
+                        <MenuItem>
+                            Gauss-Jordan Method
+                            <Link to="/GaussJordan" />
+                        </MenuItem>
+                        <MenuItem>
+                            LU decomposition Method
+                            <Link to="/LUdecomposition" />
+                        </MenuItem>
+                        <MenuItem>
+                            Jacobi Iteration Method
+                            <Link to="/JacobiIteration" />
+                        </MenuItem>
+                        <MenuItem>
+                            Gauss-seidel
+                            <Link to="/Gaussseidel" />
+                        </MenuItem>
+                        <MenuItem>
+                            Conjugate Gradient Method
+                            <Link to="/ConjugateGradient" />
+                        </MenuItem>
+                    </SubMenu>
+                    <SubMenu
+                        title="Interpolation and Extrapolation"
+                        icon={<FaYandexInternational />}
+                    >
+                        <MenuItem>
+                            Newton's divided-differences
+                            <Link to="/Newtondivided" />
+                        </MenuItem>
+                        <MenuItem>
+                            Lagrange polynomials
+                            <Link to="/Lagrangepolynomials" />
+                        </MenuItem>
+                        <MenuItem>
+                            Spline interpolation
+                            <Link to="/Splineinterpolation" />
+                        </MenuItem>
+                    </SubMenu>
+                    <SubMenu
+                        title="Least-Squares Regression"
+                        icon={<FaJsSquare />}
+                    >
+                        <MenuItem>
+                            Linear Regression
+                            <Link to="/LinearRegression" />
+                        </MenuItem>
+                        <MenuItem>
+                            Polynomial Regression
+                            <Link to="/PolynomialRegression" />
+                        </MenuItem>
+                        <MenuItem>
+                            Multiple Linear Regression
+                            <Link to="/MultipleLinearRegression" />
+                        </MenuItem>
+                    </SubMenu>
+                    <MenuItem icon={<FaPlus />}>
+                        Assignments
+                        <Link to="/assignments" />
+                    </MenuItem>
+                    <MenuItem icon={<FaPlus />}>
+                        Counter(not Strike)
+                        <Link to="/counter" />
+                    </MenuItem>
+                    <MenuItem icon={<FaPlus />}>
+                        Graph
+                        <Link to="/graph" />
+                    </MenuItem>
                 </Menu>
             </SidebarContent>
             <SidebarFooter style={{ textAlign: 'center' }}>
@@ -65,12 +159,13 @@ const Sidebar = () => {
                     }}
                 >
                     <a
-                        href="https://github.com/azouaoui-med/react-pro-sidebar"
+                        href="https://github.com/TheBossTH/numerical-react"
                         target="_blank"
                         className="sidebar-btn"
                         rel="noopener noreferrer"
                     >
-                        <span>Github</span>
+                        <FaGithub />
+                        <span> Github</span>
                     </a>
                 </div>
             </SidebarFooter>

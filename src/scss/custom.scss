@@ -1,0 +1,13 @@
+$theme-colors: (
+    'dark': #2a2a2a,
+    'danger': #ff4136,
+);
+$body-bg: #353535;
+$input-bg: #353535;
+$input-placeholder-color: #797979;
+$input-border-color: #464646;
+$input-color: #ffffff;
+$input-plaintext-color: #ffffff;
+$input-border-radius: 0;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
