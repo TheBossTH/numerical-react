@@ -20,7 +20,7 @@ const FormAssignments = () => {
 
     return (
         <div>
-            <Container className="mt-5 p-4 rounded bg-light">
+            <Container className="mt-5 p-4 bg-dark text-white shadow">
                 <Form>
                     <Form.Group controlId="Username">
                         <Form.Label>Username</Form.Label>

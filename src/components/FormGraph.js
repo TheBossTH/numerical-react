@@ -31,7 +31,7 @@ const FormGraph = () => {
     }
     return (
         <div>
-            <Container className="mt-5 p-4 rounded bg-light">
+            <Container className="mt-5 p-4 bg-dark text-white shadow">
                 <h1>Graph</h1>
                 <p>This is a Graph</p>
                 <Form>

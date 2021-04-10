@@ -12,7 +12,7 @@ const FormCounter = () => {
 
     return (
         <div>
-            <Container className="mt-5 p-4 rounded bg-light">
+            <Container className="mt-5 p-4 bg-dark text-white shadow">
                 {Cout.numconter > 20 ? (
                     <h1 className="text-danger">{Cout.numconter}</h1>
                 ) : Cout.numconter < 0 ? (

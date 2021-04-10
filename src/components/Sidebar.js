@@ -9,7 +9,7 @@ import {
 } from 'react-pro-sidebar'
 import { Link } from 'react-router-dom'
 import './Sidebar.scss'
-import image from '../images/bg2.jpg'
+import image from '../images/bg1.jpg'
 import {
     FaSquareRootAlt,
     FaBuffer,

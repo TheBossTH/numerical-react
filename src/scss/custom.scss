@@ -9,5 +9,13 @@ $input-border-color: #464646;
 $input-color: #ffffff;
 $input-plaintext-color: #ffffff;
 $input-border-radius: 0;
+
+$dropdown-bg: #353535;
+$dropdown-link-hover-bg: #616161;
+$dropdown-link-color: #cfcfcf;
+$dropdown-link-hover-color: #ffffff;
+$dropdown-link-active-color: #ffffff;
+$dropdown-link-active-bg: #8f8f8f;
+$dropdown-border-radius: 0;
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
