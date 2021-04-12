@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/numerical-react/static/css/main.23afd3ae.chunk.css",
-    "main.js": "/numerical-react/static/js/main.84a674a6.chunk.js",
-    "main.js.map": "/numerical-react/static/js/main.84a674a6.chunk.js.map",
-    "runtime-main.js": "/numerical-react/static/js/runtime-main.f5e59028.js",
-    "runtime-main.js.map": "/numerical-react/static/js/runtime-main.f5e59028.js.map",
+    "main.js": "/numerical-react/static/js/main.eb6f656a.chunk.js",
+    "main.js.map": "/numerical-react/static/js/main.eb6f656a.chunk.js.map",
+    "runtime-main.js": "/numerical-react/static/js/runtime-main.335fa120.js",
+    "runtime-main.js.map": "/numerical-react/static/js/runtime-main.335fa120.js.map",
     "static/css/2.150d169a.chunk.css": "/numerical-react/static/css/2.150d169a.chunk.css",
-    "static/js/2.3e5c346d.chunk.js": "/numerical-react/static/js/2.3e5c346d.chunk.js",
-    "static/js/2.3e5c346d.chunk.js.map": "/numerical-react/static/js/2.3e5c346d.chunk.js.map",
-    "static/js/3.e9f3c75a.chunk.js": "/numerical-react/static/js/3.e9f3c75a.chunk.js",
-    "static/js/3.e9f3c75a.chunk.js.map": "/numerical-react/static/js/3.e9f3c75a.chunk.js.map",
+    "static/js/2.30c62150.chunk.js": "/numerical-react/static/js/2.30c62150.chunk.js",
+    "static/js/2.30c62150.chunk.js.map": "/numerical-react/static/js/2.30c62150.chunk.js.map",
+    "static/js/3.5c82720b.chunk.js": "/numerical-react/static/js/3.5c82720b.chunk.js",
+    "static/js/3.5c82720b.chunk.js.map": "/numerical-react/static/js/3.5c82720b.chunk.js.map",
     "index.html": "/numerical-react/index.html",
     "static/css/2.150d169a.chunk.css.map": "/numerical-react/static/css/2.150d169a.chunk.css.map",
     "static/css/main.23afd3ae.chunk.css.map": "/numerical-react/static/css/main.23afd3ae.chunk.css.map",
-    "static/js/2.3e5c346d.chunk.js.LICENSE.txt": "/numerical-react/static/js/2.3e5c346d.chunk.js.LICENSE.txt",
+    "static/js/2.30c62150.chunk.js.LICENSE.txt": "/numerical-react/static/js/2.30c62150.chunk.js.LICENSE.txt",
     "static/media/Itsuki.4ffec2bc.gif": "/numerical-react/static/media/Itsuki.4ffec2bc.gif",
     "static/media/bg1.621573b0.jpg": "/numerical-react/static/media/bg1.621573b0.jpg",
     "static/media/icon.ff6bcf56.png": "/numerical-react/static/media/icon.ff6bcf56.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f5e59028.js",
+    "static/js/runtime-main.335fa120.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.3e5c346d.chunk.js",
+    "static/js/2.30c62150.chunk.js",
     "static/css/main.23afd3ae.chunk.css",
-    "static/js/main.84a674a6.chunk.js"
+    "static/js/main.eb6f656a.chunk.js"
   ]
 }
