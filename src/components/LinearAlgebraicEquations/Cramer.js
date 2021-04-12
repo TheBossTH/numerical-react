@@ -191,7 +191,7 @@ const Cramer = () => {
                             type="button"
                             onClick={async () => {
                                 const res = await axios.post(
-                                    'http://localhost:8080/api/v1/root/cramer',
+                                    'http://localhost:8080/api/v1/linearalgebraicequations/cramer',
                                     data
                                 )
                                 console.log(res)

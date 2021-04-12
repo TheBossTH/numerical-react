@@ -234,7 +234,7 @@ const Gaussseidel = () => {
                             type="button"
                             onClick={async () => {
                                 const res = await axios.post(
-                                    'http://localhost:8080/api/v1/root/gaussseidel',
+                                    'http://localhost:8080/api/v1/linearalgebraicequations/gaussseidel',
                                     data
                                 )
                                 console.log(res)

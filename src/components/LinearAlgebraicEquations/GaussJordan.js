@@ -191,7 +191,7 @@ const GaussJordan = () => {
                             type="button"
                             onClick={async () => {
                                 const res = await axios.post(
-                                    'http://localhost:8080/api/v1/root/gaussjordan',
+                                    'http://localhost:8080/api/v1/linearalgebraicequations/gaussjordan',
                                     data
                                 )
                                 console.log(res)

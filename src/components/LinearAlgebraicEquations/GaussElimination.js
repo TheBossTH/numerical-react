@@ -191,7 +191,7 @@ const GaussElimination = () => {
                             type="button"
                             onClick={async () => {
                                 const res = await axios.post(
-                                    'http://localhost:8080/api/v1/root/gausselimination',
+                                    'http://localhost:8080/api/v1/linearalgebraicequations/gausselimination',
                                     data
                                 )
                                 console.log(res)

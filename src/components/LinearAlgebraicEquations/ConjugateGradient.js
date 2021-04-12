@@ -237,7 +237,7 @@ const ConjugateGradient = () => {
                             type="button"
                             onClick={async () => {
                                 const res = await axios.post(
-                                    'http://localhost:8080/api/v1/root/conjugategradient',
+                                    'http://localhost:8080/api/v1/linearalgebraicequations/conjugategradient',
                                     data
                                 )
                                 console.log(res)
