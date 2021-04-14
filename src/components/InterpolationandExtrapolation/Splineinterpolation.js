@@ -3,120 +3,110 @@ import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap'
 const axios = require('axios').default
 
 const Splineinterpolation = () => {
-    const [data, setData] = useState({
-        xl: 0,
-        xr: 0,
-        error: 0.00001,
-    })
-    const [results, setResults] = useState(null)
+    const [N, setN] = useState(0)
+    const [x, setX] = useState({})
+    const [y, setY] = useState({})
+    const [ans, setAns] = useState(null)
     return (
         <div>
-            <Container className="mt-5 p-4 bg-dark text-white shadow">
+            <Container className="mt-5  p-4 bg-dark text-white shadow">
                 <h2>Spline interpolation</h2>
                 <Form>
-                    <Form.Group as={Row} controlId="Equation">
-                        <Form.Label column sm="2">
-                            Equation :
-                        </Form.Label>
-                        <Col sm="10">
-                            <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^4)-13"
-                            />
-                        </Col>
-                    </Form.Group>
                     <Form.Group as={Row} controlId="XL">
                         <Form.Label column sm="2">
-                            XL :
+                            N :
                         </Form.Label>
                         <Col sm="10">
                             <Form.Control
                                 type="number"
-                                placeholder="XL"
+                                step="1"
+                                placeholder="1-10"
                                 onChange={(e) => {
-                                    setData({
-                                        ...data,
-                                        xl: parseFloat(e.target.value),
-                                    })
+                                    setN(parseInt(e.target.value))
                                 }}
+                                required
                             />
                         </Col>
                     </Form.Group>
-                    <Form.Group as={Row} controlId="XR">
+                    <Form.Group as={Row} controlId="X">
                         <Form.Label column sm="2">
-                            XR :
+                            X :
                         </Form.Label>
-                        <Col sm="10">
-                            <Form.Control
-                                type="number"
-                                placeholder="XR"
-                                onChange={(e) => {
-                                    setData({
-                                        ...data,
-                                        xr: parseFloat(e.target.value),
-                                    })
-                                }}
-                            />
-                        </Col>
+                        {N > 0 &&
+                            N <= 10 &&
+                            Array.from(Array(N), (r, i) => (
+                                <Col key={i}>
+                                    <Form.Control
+                                        type="number"
+                                        step="1"
+                                        placeholder={`x${i}`}
+                                        id={`x${i}`}
+                                        onChange={(e) => {
+                                            setX({
+                                                ...x,
+                                                [e.target.id]: parseFloat(
+                                                    e.target.value
+                                                ),
+                                            })
+                                        }}
+                                    />
+                                </Col>
+                            ))}
                     </Form.Group>
-                    <Form.Group as={Row} controlId="Error">
+                    <Form.Group as={Row} controlId="Y">
                         <Form.Label column sm="2">
-                            Error :
+                            Y :
                         </Form.Label>
-                        <Col sm="10">
-                            <Form.Control
-                                type="number"
-                                placeholder="Error"
-                                onChange={(e) => {
-                                    setData({
-                                        ...data,
-                                        error: parseFloat(e.target.value),
-                                    })
-                                }}
-                            />
-                        </Col>
+                        {N > 0 &&
+                            N <= 10 &&
+                            Array.from(Array(N), (r, i) => (
+                                <Col key={i}>
+                                    <Form.Control
+                                        type="number"
+                                        step="1"
+                                        placeholder={`y${i}`}
+                                        id={`y${i}`}
+                                        onChange={(e) => {
+                                            setY({
+                                                ...y,
+                                                [e.target.id]: parseFloat(
+                                                    e.target.value
+                                                ),
+                                            })
+                                        }}
+                                    />
+                                </Col>
+                            ))}
                     </Form.Group>
+
                     <Form.Group as={Row}>
-                        <Col sm={{ span: 10, offset: 2 }}>
-                            <Button
-                                type="button"
-                                onClick={async () => {
-                                    const res = await axios.post(
-                                        'http://localhost:8080/api/v1/root/bisection',
-                                        data
-                                    )
-                                    console.log(res)
-                                    setResults(
-                                        JSON.parse(res.request.response).data
-                                    )
-                                }}
-                            >
-                                Calculate
-                            </Button>
-                        </Col>
+                        <Button
+                            block
+                            type="button"
+                            onClick={async () => {
+                                const res = await axios.post(
+                                    'http://localhost:8080/api/v1/leastsquaresregression/polynomialregression',
+                                    { x, y }
+                                )
+                                setAns(JSON.parse(res.request.response))
+                            }}
+                        >
+                            Calculate
+                        </Button>
                     </Form.Group>
-                    {results !== null && (
+                    {ans != null && (
                         <Table striped bordered hover variant="dark">
                             <thead>
                                 <tr>
-                                    <th>Iteration</th>
-                                    <th>XL</th>
-                                    <th>XR</th>
-                                    <th>XM</th>
-                                    <th>ER</th>
+                                    <th>Equation</th>
+                                    <th>Result</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {results.map((r) => (
-                                    <tr key={r.iteration}>
-                                        <td>{r.iteration}</td>
-                                        <td>{r.xl}</td>
-                                        <td>{r.xr}</td>
-                                        <td>{r.xm}</td>
-                                        <td>{r.er}</td>
-                                    </tr>
-                                ))}
+                                <tr>
+                                    <td>{JSON.stringify(ans.data.string)}</td>
+                                    <td>{JSON.stringify(ans.ans)}</td>
+                                </tr>
                             </tbody>
                         </Table>
                     )}
