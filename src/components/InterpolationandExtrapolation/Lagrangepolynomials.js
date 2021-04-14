@@ -3,7 +3,7 @@ import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap'
 const axios = require('axios').default
 
 const Lagrangepolynomials = () => {
-    const [N, setN] = useState(1)
+    const [N, setN] = useState(0)
     const [fx, setFx] = useState(1)
     const [x, setX] = useState({})
     const [y, setY] = useState({})
