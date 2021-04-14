@@ -5,6 +5,7 @@ const axios = require('axios').default
 const NewtonRaphson = () => {
     const [data, setData] = useState({
         x: 0,
+        eq: '(x^2)-7',
         error: 0.00001,
     })
     const [results, setResults] = useState(null)
@@ -19,9 +20,15 @@ const NewtonRaphson = () => {
                         </Form.Label>
                         <Col sm="10">
                             <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^2)-7"
+                                type="text"
+                                placeholder="(x^2)-7"
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        eq: e.target.value,
+                                    })
+                                }}
+                                required
                             />
                         </Col>
                     </Form.Group>
@@ -39,6 +46,7 @@ const NewtonRaphson = () => {
                                         x: parseFloat(e.target.value),
                                     })
                                 }}
+                                required
                             />
                         </Col>
                     </Form.Group>
@@ -56,6 +64,7 @@ const NewtonRaphson = () => {
                                         error: parseFloat(e.target.value),
                                     })
                                 }}
+                                required
                             />
                         </Col>
                     </Form.Group>

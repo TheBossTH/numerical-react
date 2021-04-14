@@ -6,6 +6,7 @@ const Bisection = () => {
     const [data, setData] = useState({
         xl: 0,
         xr: 0,
+        eq: '(x^4)-13',
         error: 0.00001,
     })
     const [results, setResults] = useState(null)
@@ -20,9 +21,14 @@ const Bisection = () => {
                         </Form.Label>
                         <Col sm="10">
                             <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^4)-13"
+                                type="text"
+                                placeholder="(x^4)-13"
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        eq: e.target.value,
+                                    })
+                                }}
                             />
                         </Col>
                     </Form.Group>

@@ -4,7 +4,9 @@ const axios = require('axios').default
 
 const Onepoint = () => {
     const [data, setData] = useState({
-        x: 0,
+        x0: 1,
+        x1: 2,
+        eq: '(x^2)-7',
         error: 0.00001,
     })
     const [results, setResults] = useState(null)
@@ -19,9 +21,14 @@ const Onepoint = () => {
                         </Form.Label>
                         <Col sm="10">
                             <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^2)-7"
+                                type="text"
+                                placeholder="(x^2)-7"
+                                onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        eq: e.target.value,
+                                    })
+                                }}
                             />
                         </Col>
                     </Form.Group>

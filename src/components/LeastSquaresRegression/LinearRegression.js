@@ -33,8 +33,6 @@ const LinearRegression = () => {
                         <Form.Label column sm="2">
                             X :
                         </Form.Label>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="Xi">
                         {N > 0 &&
                             N <= 10 &&
                             Array.from(Array(N), (r, i) => (
@@ -42,6 +40,7 @@ const LinearRegression = () => {
                                     <Form.Control
                                         type="number"
                                         step="1"
+                                        placeholder={`x${i}`}
                                         id={`x${i}`}
                                         onChange={(e) => {
                                             setX({
@@ -59,8 +58,6 @@ const LinearRegression = () => {
                         <Form.Label column sm="2">
                             Y :
                         </Form.Label>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="Yi">
                         {N > 0 &&
                             N <= 10 &&
                             Array.from(Array(N), (r, i) => (
@@ -68,6 +65,7 @@ const LinearRegression = () => {
                                     <Form.Control
                                         type="number"
                                         step="1"
+                                        placeholder={`y${i}`}
                                         id={`y${i}`}
                                         onChange={(e) => {
                                             setY({
