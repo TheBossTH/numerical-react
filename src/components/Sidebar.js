@@ -16,7 +16,6 @@ import {
     FaYandexInternational,
     FaJsSquare,
     FaGithub,
-    FaPlus,
     FaHome,
 } from 'react-icons/fa'
 const Sidebar = () => {
@@ -137,18 +136,6 @@ const Sidebar = () => {
                             <Link to="/MultipleLinearRegression" />
                         </MenuItem>
                     </SubMenu>
-                    <MenuItem icon={<FaPlus />}>
-                        Assignments
-                        <Link to="/assignments" />
-                    </MenuItem>
-                    <MenuItem icon={<FaPlus />}>
-                        Counter(not Strike)
-                        <Link to="/counter" />
-                    </MenuItem>
-                    <MenuItem icon={<FaPlus />}>
-                        Graph
-                        <Link to="/graph" />
-                    </MenuItem>
                 </Menu>
             </SidebarContent>
             <SidebarFooter style={{ textAlign: 'center' }}>
