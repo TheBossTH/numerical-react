@@ -1,8 +1,4 @@
 import IndexPage from './pages/IndexPage'
-import AssignmentsPage from './pages/AssignmentsPage'
-import DynamicPage from './pages/DynamicPage'
-import CounterPage from './pages/CounterPage'
-import GraphPage from './pages/GraphPage'
 import BisectionPage from './pages/RootsOfEquations/BisectionPage'
 import FalsePositionPage from './pages/RootsOfEquations/FalsePositionPage'
 import OnePointPage from './pages/RootsOfEquations/OnePointPage'
@@ -90,19 +86,6 @@ function App() {
                 </Route>
                 <Route path={'/MultipleLinearRegression'}>
                     <MultipleLinearRegressionPage />
-                </Route>
-
-                <Route path={'/assignments'}>
-                    <AssignmentsPage />
-                </Route>
-                <Route path={'/counter'}>
-                    <CounterPage />
-                </Route>
-                <Route path={'/graph'}>
-                    <GraphPage />
-                </Route>
-                <Route path={'/:name/:nickname'}>
-                    <DynamicPage />
                 </Route>
             </Switch>
         </Router>
