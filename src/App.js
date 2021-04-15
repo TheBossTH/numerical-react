@@ -26,7 +26,7 @@ import PolynomialRegressionPage from './pages/LeastSquaresRegression/PolynomialR
 import MultipleLinearRegressionPage from './pages/LeastSquaresRegression/MultipleLinearRegressionPage'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
-import Sidebar from './components/Sidebar'
+// import Sidebar from './components/Sidebar'
 
 function App() {
     return (

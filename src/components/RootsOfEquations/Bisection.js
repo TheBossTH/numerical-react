@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap'
+import { Line } from 'react-chartjs-2'
 const axios = require('axios').default
 
 const Bisection = () => {
@@ -10,6 +11,40 @@ const Bisection = () => {
         error: 0.00001,
     })
     const [results, setResults] = useState(null)
+    const datagraph = {
+        labels: [],
+        datasets: [
+            {
+                label: 'XM',
+                data: [],
+                fill: false,
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgba(255, 99, 132, 0.2)',
+            },
+        ],
+    }
+    results !== null &&
+        results.map(
+            (r) => (
+                datagraph.labels.push(r.xm),
+                datagraph.datasets[0].data.push(r.fxm)
+            )
+        )
+    const options = {
+        title: {
+            display: true,
+            text: 'Bisection',
+        },
+        scales: {
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true,
+                    },
+                },
+            ],
+        },
+    }
     return (
         <div>
             <Container className="mt-5 p-4 bg-dark text-white shadow">
@@ -103,28 +138,31 @@ const Bisection = () => {
                         </Col>
                     </Form.Group>
                     {results !== null && (
-                        <Table striped bordered hover variant="dark">
-                            <thead>
-                                <tr>
-                                    <th>Iteration</th>
-                                    <th>XL</th>
-                                    <th>XR</th>
-                                    <th>XM</th>
-                                    <th>ER</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {results.map((r) => (
-                                    <tr key={r.iteration}>
-                                        <td>{r.iteration}</td>
-                                        <td>{r.xl}</td>
-                                        <td>{r.xr}</td>
-                                        <td>{r.xm}</td>
-                                        <td>{r.er}</td>
+                        <div>
+                            <Table striped bordered hover variant="dark">
+                                <thead>
+                                    <tr>
+                                        <th>Iteration</th>
+                                        <th>XL</th>
+                                        <th>XR</th>
+                                        <th>XM</th>
+                                        <th>ER</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </Table>
+                                </thead>
+                                <tbody>
+                                    {results.map((r) => (
+                                        <tr key={r.iteration}>
+                                            <td>{r.iteration}</td>
+                                            <td>{r.xl}</td>
+                                            <td>{r.xr}</td>
+                                            <td>{r.xm}</td>
+                                            <td>{r.er}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </Table>
+                            <Line data={datagraph} options={options} />
+                        </div>
                     )}
                 </Form>
             </Container>

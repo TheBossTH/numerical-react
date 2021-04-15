@@ -8,6 +8,9 @@ const FormHome = () => {
                 <h2>Itsuki is No.1 Waifu</h2>
                 <br />
                 <img src={Itsuki} alt="Itsuki" className="rounded img-fluid" />
+                <br />
+                <h3 className="mt-5">Kittidet Cheavachirakul</h3>
+                <h3>6104062630174</h3>
             </Container>
         </div>
     )

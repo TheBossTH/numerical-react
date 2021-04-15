@@ -98,16 +98,6 @@ const NavBar = () => {
                             Multiple Linear Regression
                         </NavDropdown.Item>
                     </NavDropdown>
-
-                    <NavLink to="/assignments" className="nav-link">
-                        Assignments
-                    </NavLink>
-                    <NavLink to="/counter" className="nav-link">
-                        Counter(not Strike)
-                    </NavLink>
-                    <NavLink to="/graph" className="nav-link">
-                        Graph
-                    </NavLink>
                 </Nav>
                 <Form inline>
                     <Button
