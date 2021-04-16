@@ -85,7 +85,7 @@ const Splineinterpolation = () => {
                             type="button"
                             onClick={async () => {
                                 const res = await axios.post(
-                                    'http://localhost:8080/api/v1/leastsquaresregression/polynomialregression',
+                                    'http://localhost:8080/api/v1/interpolationandextrapolation/splineinterpolation',
                                     { x, y }
                                 )
                                 setAns(JSON.parse(res.request.response))
@@ -98,15 +98,17 @@ const Splineinterpolation = () => {
                         <Table striped bordered hover variant="dark">
                             <thead>
                                 <tr>
-                                    <th>Equation</th>
+                                    <th>KS</th>
                                     <th>Result</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>{JSON.stringify(ans.data.string)}</td>
-                                    <td>{JSON.stringify(ans.ans)}</td>
-                                </tr>
+                                {ans.result.map((r, i) => (
+                                    <tr>
+                                        <td>{i}</td>
+                                        <td>{r}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </Table>
                     )}
