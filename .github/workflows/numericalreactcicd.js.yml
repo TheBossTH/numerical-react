@@ -11,17 +11,17 @@ jobs:
         name: Push Numerical-React to Github
         runs-on: ubuntu-latest
         steps:
-            - name: Check out the repo
+            - name: Checkout repo
               uses: actions/checkout@v2
-            - name: Docker Login
+            - name: Login Docker
               env:
                   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
                   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
               run: |
                   docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            - name: Docker Build
+            - name: Build Docker
               run: |
                   docker build . -t theboss38/numerical-react:latest
-            - name: Docker Push
+            - name: Push Docker
               run: |
                   docker push theboss38/numerical-react:latest
