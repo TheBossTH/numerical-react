@@ -5,7 +5,6 @@ const FormHome = () => {
     return (
         <div>
             <Container className="mt-5 p-4 bg-dark text-center text-white shadow">
-                <h2>Itsuki is No.1 Waifu</h2>
                 <br />
                 <img src={Itsuki} alt="Itsuki" className="rounded img-fluid" />
                 <br />
