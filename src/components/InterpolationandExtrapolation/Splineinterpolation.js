@@ -5,6 +5,7 @@ const axios = require('axios').default
 const Splineinterpolation = () => {
     const [N, setN] = useState(0)
     const [x, setX] = useState({})
+    const [xi, setXi] = useState(0)
     const [y, setY] = useState({})
     const [ans, setAns] = useState(null)
     return (
@@ -78,7 +79,22 @@ const Splineinterpolation = () => {
                                 </Col>
                             ))}
                     </Form.Group>
-
+                    <Form.Group as={Row} controlId="Xneed">
+                        <Form.Label column sm="2">
+                            Xi :
+                        </Form.Label>
+                        <Col sm="10">
+                            <Form.Control
+                                type="number"
+                                step="1"
+                                placeholder="Xi"
+                                onChange={(e) => {
+                                    setXi(parseInt(e.target.value))
+                                }}
+                                required
+                            />
+                        </Col>
+                    </Form.Group>
                     <Form.Group as={Row}>
                         <Button
                             block
@@ -86,7 +102,7 @@ const Splineinterpolation = () => {
                             onClick={async () => {
                                 const res = await axios.post(
                                     'http://localhost:8080/api/v1/interpolationandextrapolation/splineinterpolation',
-                                    { x, y }
+                                    { x, y, xi }
                                 )
                                 setAns(JSON.parse(res.request.response))
                             }}
@@ -98,17 +114,13 @@ const Splineinterpolation = () => {
                         <Table striped bordered hover variant="dark">
                             <thead>
                                 <tr>
-                                    <th>KS</th>
                                     <th>Result</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {ans.result.map((r, i) => (
-                                    <tr>
-                                        <td>{i}</td>
-                                        <td>{r}</td>
-                                    </tr>
-                                ))}
+                                <tr>
+                                    <td>{ans.result}</td>
+                                </tr>
                             </tbody>
                         </Table>
                     )}
