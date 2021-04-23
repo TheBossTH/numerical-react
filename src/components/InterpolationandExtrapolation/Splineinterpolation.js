@@ -5,7 +5,7 @@ const axios = require('axios').default
 const Splineinterpolation = () => {
     const [N, setN] = useState(0)
     const [x, setX] = useState({})
-    const [xi, setXi] = useState(0)
+    const [xi, setXi] = useState(0.0)
     const [y, setY] = useState({})
     const [ans, setAns] = useState(null)
     return (
@@ -89,7 +89,7 @@ const Splineinterpolation = () => {
                                 step="1"
                                 placeholder="Xi"
                                 onChange={(e) => {
-                                    setXi(parseInt(e.target.value))
+                                    setXi(parseFloat(e.target.value))
                                 }}
                                 required
                             />
